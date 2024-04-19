@@ -48,36 +48,6 @@ class User {
             throw error;
         }
     }
-
-
-    // Method to find favorite pets for a user
-    static async findFavoritePets(id) {
-        try {
-            const query = ' SELECT * FROM favorite_pets WHERE id = $1';
-            const result = await db.query(query, [id]);
-            return result.rows;
-        } catch (error) {
-            console.error('Error finding favorite pets:', error);
-            throw error;
-        }
-    }
-
-    static async addPet(id, petId) {
-        const query = 'INSERT INTO user_pets (id, pet_id) VALUES ($1, $2)';
-        await db.query(query, [id, petId]);
-    }
-
-    // Method to find saved pets for a user
-    static async findSavedPets(id) {
-        try {
-            const query = ' SELECT * FROM user_pets WHERE user_id = $1';
-            const result = await db.query(query, [id]);
-            return result.rows;
-        } catch (error) {
-            console.error('Error finding saved pets:', error);
-            throw error;
-        }
-    }
 }
 
 module.exports = User;

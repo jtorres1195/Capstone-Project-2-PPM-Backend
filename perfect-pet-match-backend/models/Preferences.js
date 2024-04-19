@@ -1,6 +1,6 @@
 const db = require('../db');
 
-class PetMatch {
+class Preferences {
     constructor(matchId, userId, name, species, age, size, gender, breed, color, coat, good_with_children, good_with_dogs, good_with_cats, house_trained, declawed, special_needs, distance, location, status, matchedPets) {
         this.matchId = matchId;
         this.userId = userId;
@@ -24,7 +24,7 @@ class PetMatch {
         this.matchedPets = matchedPets;
     }
 
-    static async findMatches(matchId, name, species, age, size, gender, breed, color, coat, good_with_children, good_with_dogs, good_with_cats, house_trained, declawed, special_needs, distance, location, status, matchedPets) {
+    static async findPreferences(matchId, name, species, age, size, gender, breed, color, coat, good_with_children, good_with_dogs, good_with_cats, house_trained, declawed, special_needs, distance, location, status, matchedPets) {
         try {
             const query = 'SELECT * FROM pets WHERE name = $1 AND species <= $2 AND age = $3 AND size = $4 AND gender = $5 AND breed = $6 AND location = $7 AND adoptionStatus = $8';
             const values = [matchId, name, species, age, size, gender, breed, color, coat, good_with_children, good_with_dogs, good_with_cats, house_trained, declawed, special_needs, distance, location, status, matchedPets];
@@ -41,7 +41,7 @@ class PetMatch {
             const { rows } = await db.query(query, values);
             return rows;
         } catch (error) {
-            console.error('Error finding pet matches:', error);
+            console.error('Error finding pet preferences:', error);
             throw error;
         }
     }
