@@ -1,9 +1,9 @@
 const request = require('supertest');
 const express = require('express');
 const PetFinderAPI = require('../helpers/apiHelper'); 
-const animalTypesRouter = require('../routes/animalTypesRouter'); // Assuming this is the file where the code above is
+const animalTypesRouter = require('../routes/animalTypesRouter');
 
-jest.mock('../helpers/apiHelper'); // Mock the entire PetFinderAPI module
+jest.mock('../helpers/apiHelper'); 
 
 describe('GET /animal-types', () => {
     let app;
@@ -11,8 +11,8 @@ describe('GET /animal-types', () => {
     beforeEach(() => {
         app = express();
         app.use(express.json());
-        app.use('/', animalTypesRouter); // Use the router
-        PetFinderAPI.mockClear(); // Clear any instances and calls to constructor and all methods
+        app.use('/', animalTypesRouter); 
+        PetFinderAPI.mockClear(); 
     });
 
     it('should return a list of animal types on successful fetch', async () => {

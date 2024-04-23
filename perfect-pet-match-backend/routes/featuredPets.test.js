@@ -2,7 +2,7 @@ const request = require('supertest');
 const express = require('express');
 const PetFinderAPI = require('../helpers/apiHelper');
 const { updateFeaturedPetsinDatabase } = require('../helpers/petService');
-const featuredPetsRouter = require('../routes/featuredPetsRouter'); // Adjust the path as needed
+const featuredPetsRouter = require('../routes/featuredPetsRoutes'); 
 
 jest.mock('../helpers/apiHelper');
 jest.mock('../helpers/petService');

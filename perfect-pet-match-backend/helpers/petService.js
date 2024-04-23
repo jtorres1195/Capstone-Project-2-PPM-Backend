@@ -7,8 +7,6 @@ function scheduleFeaturedPetsUpdate() {
     cron.schedule('0 0 * * 1', async () => {
         try {
             const newFeaturedPets = await petFinderAPI.fetchFeaturedPets();
-            await updateFeaturedPetsinDatabase(newFeaturedPets);
-            console.log('Featured pets updated successfully!');
         } catch (error) {
             console.error('Error updating featured pets:', error);
         }
@@ -18,4 +16,4 @@ function scheduleFeaturedPetsUpdate() {
     });
 }
 
-module.exports = { updateFeaturedPetsinDatabase, scheduleFeaturedPetsUpdate };
+module.exports = scheduleFeaturedPetsUpdate;

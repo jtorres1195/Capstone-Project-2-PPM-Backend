@@ -1,5 +1,4 @@
 const express = require('express');
-const { updateFeaturedPetsinDatabase } = require('../helpers/petService');
 const PetFinderAPI = require('../helpers/apiHelper');
 const router = express.Router();
 

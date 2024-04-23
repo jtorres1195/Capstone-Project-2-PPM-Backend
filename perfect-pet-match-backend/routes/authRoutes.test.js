@@ -3,9 +3,9 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const authRouter = require('../routes/authRouter'); // Assuming the file name
+const authRouter = require('../routes/authRouter');
 
-jest.mock('../models/User'); // Mock the User model
+jest.mock('../models/User');
 jest.mock('bcrypt');
 jest.mock('jsonwebtoken');
 
