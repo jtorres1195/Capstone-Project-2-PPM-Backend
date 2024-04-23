@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node app.js",
-    "postinstall": "npm config set unsafe-perm true && npm rebuild bcrypt --build-from-source"
+    "postinstall": "npm config set --unsafe-perm true && npm rebuild bcrypt --build-from-source"
   },
   "keywords": [],
   "author": "",
