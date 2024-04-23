@@ -10,10 +10,10 @@ const emailSubscriptionRouter = require('./routes/emailSubscription');
 
 const app = express();
 
-// Apply CORS middlware
+// Apply CORS middleware
 app.use(cors({
-    origin: 'https://perfect-pet-match-frontend.onrender.com/',
-    credentials: true
+    origin: 'https://perfect-pet-match-frontend.onrender.com',  
+    credentials: true  
 }));
 
 // Apply middleware for parsing json request bodies
