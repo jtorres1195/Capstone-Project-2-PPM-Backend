@@ -12,7 +12,7 @@ const app = express();
 
 // Apply CORS middlware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://perfect-pet-match-frontend.onrender.com/',
     credentials: true
 }));
 
